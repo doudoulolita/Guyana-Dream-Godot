@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://brsvm5ligqtnn"]
+
+[ext_resource type="Script" uid="uid://cv4nruusynaf8" path="res://Scripts/blocs.gd" id="1_o5j0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t1huc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5j0k"]
+albedo_color = Color(0.3017289, 0.18671721, 0.06957996, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1huc"]
+
+[node name="Blocs" type="RigidBody3D" unique_id=767963639]
+collision_layer = 2
+collision_mask = 4
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_o5j0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1285175061]
+mesh = SubResource("BoxMesh_t1huc")
+surface_material_override/0 = SubResource("StandardMaterial3D_o5j0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1997404916]
+shape = SubResource("BoxShape3D_t1huc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

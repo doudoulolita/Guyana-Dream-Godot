@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b256w4wytl2j8"]
+
+[ext_resource type="PackedScene" uid="uid://dnfa3vnkvun3l" path="res://Scenes/floor.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://b0yrhvek504rv" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://brsvm5ligqtnn" path="res://Scenes/blocs.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://xx5hi02naqlg" path="res://Scenes/arbre.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://blt4kt44noboj" path="res://Scenes/obstacle.tscn" id="5_kry3j"]
+
+[node name="main" type="Node" unique_id=2089453673]
+
+[node name="Floor" parent="." unique_id=728329768 instance=ExtResource("1_jjgbg")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1977208239]
+transform = Transform3D(0.73319423, 0.46900392, 0.49240392, 0.06180933, -0.76706845, 0.638581, 0.67720455, -0.43776864, -0.591399, 8, 16, 55.98655)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=396650236]
+transform = Transform3D(1, 0, 0, 0, 0.80385685, 0.5948228, 0, -0.5948228, 0.80385685, -0.5, 5.9143677, 102.12305)
+
+[node name="Player" parent="." unique_id=513250632 node_paths=PackedStringArray("sync_position_node") groups=["player"] instance=ExtResource("2_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5507469, 99.36815)
+sync_position_node = NodePath("../Camera3D")
+camera_z_offset = 1
+
+[node name="Blocs" parent="." unique_id=1707802779 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.987938, 3.342679, 97.42629)
+
+[node name="Arbre" parent="." unique_id=767963639 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8048506, 0.5723839, 88.98894)
+
+[node name="Arbre2" parent="." unique_id=449512088 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.709011, 0.5723839, 75.580635)
+
+[node name="Obstacle" parent="." unique_id=1374647918 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08145523, 6.0359373, 90.35997)
+mass = 200.0
+linear_damp_mode = 0
+linear_damp = 0.0
+fall_down_distance = 2

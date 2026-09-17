@@ -1,2 +1,4 @@
 # Guyana-Dream-Godot
-Ça part d'un jeu en 2D fait avec javascript pour le transformer en jeu 3D fait avec Godot.
+Ça part du jeu Guyana-Dream en 2D que j'ai codé avec javascript pour le transformer en jeu 3D fait avec Godot.
+
+Je commence par suivre le tuto "Learn to make First 3D game in Godot 4 (Complete Tutorial Beginner Friendly)" de la chaîne CyberPotato (https://www.youtube.com/watch?v=A3R6T1h0ln8&t=2s) en remplaçant les objets par mes assets 3D persos créées avec Blender.

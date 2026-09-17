@@ -1,5 +1,5 @@
 # Guyana-Dream-Godot
-Ça part du jeu Guyana-Dream en 2D que j'ai codé avec javascript pour le transformer en jeu 3D fait avec Godot.
+Ça part du jeu en 2D [Guyana-Dream](http://usf.tuxfamily.org/guyana-dream/) que j'ai codé avec javascript pour le transformer en jeu 3D fait avec Godot.
 
 ![Capture jeu 2D Guyana-Dream](images/capture_guyana_dream.png)
 

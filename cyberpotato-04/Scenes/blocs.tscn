@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brsvm5ligqtnn"]
+
+[ext_resource type="Script" uid="uid://cv4nruusynaf8" path="res://Scripts/blocs.gd" id="1_o5j0k"]
+[ext_resource type="PackedScene" uid="uid://cj8a3dyag34gy" path="res://Modeles/jaguar-armature-6.glb" id="2_0n80y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1huc"]
+size = Vector3(1.1395569, 1.7556152, 3.2230835)
+
+[node name="Blocs" type="RigidBody3D" unique_id=767963639]
+collision_layer = 2
+collision_mask = 4
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_o5j0k")
+
+[node name="jaguar-armature-6" parent="." unique_id=1491188296 instance=ExtResource("2_0n80y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1997404916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017837524, 0.86655045, 0.36489868)
+shape = SubResource("BoxShape3D_t1huc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

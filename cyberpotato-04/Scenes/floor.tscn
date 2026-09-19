@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dnfa3vnkvun3l"]
+
+[ext_resource type="Script" uid="uid://dpga76lj1w7h0" path="res://Scripts/floor.gd" id="1_nvnu3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+albedo_color = Color(0.31442297, 0.21015185, 0.07051758, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vnhbi"]
+material = SubResource("StandardMaterial3D_jjvhh")
+size = Vector3(8.246033, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjgbg"]
+albedo_color = Color(0.19654763, 0.41772017, 0.19631568, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnhbi"]
+size = Vector3(82.77251, 3.161049, 199.53)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ucoge"]
+size = Vector3(7.7738953, 0.17175293, 196.80927)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf5p8"]
+albedo_color = Color(0.2583347, 0.1763657, 0.066877425, 1)
+
+[node name="Floor" type="RigidBody3D" unique_id=517615739]
+collision_layer = 4
+collision_mask = 0
+freeze = true
+contact_monitor = true
+script = ExtResource("1_nvnu3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=672483013]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 200, 0.2041626, 0, 0)
+mesh = SubResource("BoxMesh_vnhbi")
+surface_material_override/0 = SubResource("StandardMaterial3D_jjgbg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2047712564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29772186, -0.9630394, -0.061447144)
+shape = SubResource("BoxShape3D_vnhbi")
+
+[node name="Chemin1" type="MeshInstance3D" parent="." unique_id=1116179417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7926788, 0.46400273, 2.38237)
+mesh = SubResource("BoxMesh_ucoge")
+surface_material_override/0 = SubResource("StandardMaterial3D_mf5p8")
+
+[node name="Chemin2" type="MeshInstance3D" parent="." unique_id=1754870458]
+transform = Transform3D(-4.371139e-08, 0, 0.42294264, 0, 1, 0, -1, 0, -1.848741e-08, 0.59726524, 0.46400273, 82.76434)
+mesh = SubResource("BoxMesh_ucoge")
+surface_material_override/0 = SubResource("StandardMaterial3D_mf5p8")
